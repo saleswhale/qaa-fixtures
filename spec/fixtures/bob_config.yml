@@ -1,0 +1,21 @@
+#all time/duration based options are in seconds
+default: &default
+  bob: bob_default
+  user: toto
+
+profile.common: &profile_common
+  <<: *default
+  bob: bob_common
+
+profile.test:
+  <<: *profile_common
+  bob: bob_test
+  user: test_user
+  foo:
+    baz2: bob_baz2
+    baz3: bob_baz3
+
+profile.live:
+  <<: *profile_common
+  bob: bob_live
+  user: live_user

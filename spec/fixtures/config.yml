@@ -1,0 +1,26 @@
+#all time/duration based options are in seconds
+default: &default
+  namespace: default
+  foo:
+    bar: bar_default
+    baz: baz_default
+
+profile.common: &profile_common
+  <<: *default
+  foo:
+    bar: bar_common
+
+profile.test:
+  <<: *profile_common
+  namespace: test
+  foo:
+    baz: baz_test
+    baz2: baz2_test
+
+profile.live:
+  <<: *profile_common
+  namespace: live
+  foo:
+    bar: bar_live
+    baz: baz_live
+
